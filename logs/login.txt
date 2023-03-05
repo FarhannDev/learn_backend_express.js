@@ -1,0 +1,4 @@
+20230305	09:58:44	89bc557b-80cc-4117-81dc-192fc49fc81f	Unauthorized
+20230305	10:00:37	745aa453-dda0-42c0-9c4f-cb08b3c19b30	User johndoe logged in to application: 
+20230305	10:00:56	38ce17c3-e75c-4ba6-a744-c5b5b29c9431	User johndoe logged in to application
+20230305	10:25:04	c723379a-87b5-4d70-8b28-53132303078a	User joni logged in to application
