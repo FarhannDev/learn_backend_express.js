@@ -1,1 +1,22 @@
-[{"id":"k7dfnm0aiPbT2D6l","username":"farhan18","password":"$2b$10$LnBv7DrW85cUkotHETSJweHmmgVh/pQgid0FzMXvfEZEb2H2ZpvIu"},{"id":"poqX-3bnxITbzBe8","username":"johndoe","password":"$2b$10$FeFJkKZQ9IM49qYsW5x4DegyGUD4z6tpJqE7S.jPXkEasdTF2P4Sa"},{"id":"GNL7NQ_JErn85Sw9","username":"farhan","password":"$2b$10$F3CSAfNjOxOjbYgrT.Tt.uGzUv3j6xyPoJErxT2AC7zeLXgcmKi/y","createdAt":"2023-03-05T03:15:26.967Z","updatedAt":"2023-03-05T03:15:26.967Z"},{"id":"N4bnqxked9Z6ivDm","username":"joko","password":"$2b$10$fMgBhiHwUk4XQh5J89rfX.Kz6.87zygeqTRhnSxepLqy0/76jGnPm","createdAt":"2023-03-05T03:22:30.847Z","updatedAt":"2023-03-05T03:22:30.847Z"},{"id":"V8aIK96Sobc-SWER","username":"joni","password":"$2b$10$6OenFY0VBgFDpHA.PJoB1.fZWki3foeovEvOQUjF64w9HQ4aLaAHu","createdAt":"2023-03-05T03:23:24.335Z","updatedAt":"2023-03-05T03:23:24.335Z"}]
+[
+  {
+    "id": "plwAJ2zdnnVhCTVP",
+    "name": "Farhan",
+    "email": "farhan18042002@gmail.com",
+    "username": "farhan18",
+    "password": "$2b$10$RHoz/Fs0yXkY9ZvWS1RIO.3fho16KIp9xVHWEJV9E6igzdYtOtBcq",
+    "createdAt": "2023-03-05T13:35:17.363Z",
+    "updatedAt": "2023-03-05T13:35:17.363Z"
+  },
+  {
+    "id": "GNL7NQ_JErn85Sw9",
+    "name": "Administrator",
+    "email": "admin@mail.com",
+    "username": "admin",
+    "roles": { "admin": 5150, "author": 1984, "user": 2001 },
+    "password": "$2b$10$F3CSAfNjOxOjbYgrT.Tt.uGzUv3j6xyPoJErxT2AC7zeLXgcmKi/y",
+    "createdAt": "2023-03-05T03:15:26.967Z",
+    "updatedAt": "2023-03-05T03:15:26.967Z",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjc4MDI3NTI2LCJleHAiOjE2NzgxMTM5MjZ9.FJbu-JywQROifqxs7qqsfklA4ndrt15xMRERunFM7Qo"
+  }
+]

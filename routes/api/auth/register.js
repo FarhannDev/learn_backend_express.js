@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {
   registerController,
-} = require("../../controllers/auth/registerController");
+} = require("../../../controllers/auth/registerController");
 
 router.post("/", registerController);
 module.exports = router;

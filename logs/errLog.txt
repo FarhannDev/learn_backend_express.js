@@ -1,2 +1,12 @@
 20230304	20:55:54	b87007f1-4c4b-4e5b-9757-f62746455d45	Error: Not Allowed By CORS.
 20230304	21:44:01	985f7eee-f623-4f35-a22a-34386802b6ef	Error: Not Allowed By CORS.
+20230305	19:41:31	c05cc7e3-cd7e-4e13-9f08-c411f40697c1	SyntaxError: Unexpected token } in JSON at position 29
+20230305	19:52:16	d2880e5a-289d-4740-a56c-be0ebbf83fcd	SyntaxError: Unexpected token } in JSON at position 29
+20230306	09:49:25	087630f1-eb6e-4baa-a1be-445ca6fbc154	SyntaxError: Unexpected token } in JSON at position 58
+20230306	11:47:13	a06d3058-c56a-4db8-aa91-ed3df80abccd	SyntaxError: Unexpected number in JSON at position 122
+20230306	11:47:32	28689a63-f776-4f18-8982-4e8d1dd83233	SyntaxError: Unexpected number in JSON at position 122
+20230306	11:48:13	7e6feffb-1a16-4495-880e-08df3100e483	SyntaxError: Unexpected token E in JSON at position 20
+20230306	11:49:32	81c7b66d-0c06-4f3b-af2f-7861d0540c43	SyntaxError: Unexpected number in JSON at position 90
+20230306	11:49:55	3cd442e6-eaeb-4444-98f5-034cdd7acff7	SyntaxError: Unexpected number in JSON at position 90
+20230306	11:49:56	5730d361-b484-40af-a77e-fe89bbaf659c	SyntaxError: Unexpected number in JSON at position 90
+20230306	11:51:02	56a7e642-83d7-4e7d-bb9f-4a459d0d8b71	SyntaxError: Unexpected number in JSON at position 90

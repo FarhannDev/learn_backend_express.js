@@ -1,34 +1,50 @@
-// Init data
-const usersDB = {
-  users: require("../../models/users.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
-
+require("dotenv").config();
+const fsPromises = require("fs/promises");
 const bcrypt = require("bcrypt");
+const path = require("path");
 const { logEvents } = require("../../middleware/logEvents");
+const { responseFail } = require("../../utils/response");
+const {
+  Users,
+  userSigninValidation,
+  userAccessTokenHandler,
+  userRefreshTokenHandler,
+  userSaveTokenHandler,
+  userPasswordVerify,
+  userFindUsername,
+  setResponseSuccess,
+} = require("../../models/users");
 
-const userLoginHandler = async (req, res) => {
+exports.userLoginHandler = async (req, res) => {
   const { username, password } = req.body;
-  if (!username || !password)
-    return res
-      .status(400)
-      .json({ status: "fail", message: "Username and password are required" });
+  const values = { username, password };
+  const { error } = userSigninValidation.validate(values);
+  error && res.status(400).json(responseFail(`The field ${error.message}`));
+  const users = userFindUsername(Users.users, username);
+  !users && res.status(400).json(responseFail("Incorrect username/password"));
+  const passwordVerify = await userPasswordVerify(password, users.password);
+  !passwordVerify &&
+    res.status(400).json(responseFail("Incorrect username / password"));
 
-  const findUser = usersDB.users.find((user) => user.username === username);
-  if (!findUser) return res.sendStatus(401);
-  const match = await bcrypt.compare(password, findUser.password);
-  if (match) {
-    logEvents(
-      `User ${findUser.username} logged in to application`,
-      "login.txt"
-    );
-    res.status(200).json({ status: "success", message: "User logged in!" });
-  } else {
-    logEvents(`Unauthorized`, "login.txt");
-    res.sendStatus(401);
-  }
+  // Create JWT
+  const isUsername = users.username;
+  const accessToken = userAccessTokenHandler(isUsername, "1d");
+  const refreshToken = userRefreshTokenHandler(isUsername, "1d");
+  const otherUsers = Users.users.filter((user) => user.username !== isUsername);
+  const currentUsers = userSaveTokenHandler(users, refreshToken);
+
+  Users.setUsers([...otherUsers, currentUsers]);
+  await fsPromises.writeFile(
+    path.join(__dirname, "..", "..", "data", "users.json"),
+    JSON.stringify(Users.users)
+  );
+
+  res.cookie("jwt", refreshToken, {
+    httpOnly: true,
+    sameSite: "None",
+    // secure: true,
+    maxAge: 24 * 60 * 60 * 1000,
+  });
+  res.status(200).json(setResponseSuccess(currentUsers, accessToken));
+  logEvents(`User ${users.username} logged in to application`, "login.txt");
 };
-
-module.exports = { userLoginHandler };
